@@ -33,10 +33,11 @@ public class PlayerMovement : MonoBehaviour {
 
 
 
+
     // Use this for initialization
     void Start () {
-		
-	}
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -72,6 +73,10 @@ public class PlayerMovement : MonoBehaviour {
 
         //allows the player to move left or right 
         gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(xMovement * playerSpeed, gameObject.GetComponent<Rigidbody2D>().velocity.y);
+
+
+        
+
 
 
     }

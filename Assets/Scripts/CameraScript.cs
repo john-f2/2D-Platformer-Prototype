@@ -38,6 +38,16 @@ public class CameraScript : MonoBehaviour {
     // LateUpdate is called at the end of the update cycle 
     void LateUpdate()
     {
+        //TODO : fix camera tracking when player falls below a certain point later 
+        //this is my super ghetto way to track the player when he moves down
+        //there is probably a better way to do this 
+        //this is a pretest for camera tracking in a metroidvania game 
+        //it works but it is not smooth at all 
+        //if(player.transform.position.y < -3f){
+        //    yMin = -20;
+
+        //}
+        
         //Mathf is part of the unity library
 
         //what clamp does is clamp the value ofthe player's position to be between the min and max
@@ -46,6 +56,9 @@ public class CameraScript : MonoBehaviour {
 
         //the camera poistion changes based on changes from the playerObject 
         gameObject.transform.position = new Vector3(x, y, gameObject.transform.position.z);
+
+
+
 
     }
 }
