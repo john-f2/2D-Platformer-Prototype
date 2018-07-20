@@ -20,8 +20,7 @@ public class PlayerMovement : MonoBehaviour {
     //public variables for the player characters
     public int playerSpeed = 5;
 
-    //used to determine where the player is facing, right == true
-    private bool facingRight = false;
+
 
     public int playerJumpPower = 1250;
 
@@ -61,13 +60,13 @@ public class PlayerMovement : MonoBehaviour {
 
         //Direction
         //Flips player depending on which direction the player is moving 
-        if (xMovement < 0.0f && facingRight == false)
+        if (xMovement < 0.0f )
         {
-            FlipPlayerSprite();
+            GetComponent<SpriteRenderer>().flipX = true;
         }
-        else if (xMovement > 0.0f && facingRight)
+        else if (xMovement > 0.0f)
         {
-            FlipPlayerSprite();
+            GetComponent<SpriteRenderer>().flipX = false;
 
         }
 
@@ -81,18 +80,6 @@ public class PlayerMovement : MonoBehaviour {
 
     }
 
-    //Flips the player sprite 
-    void FlipPlayerSprite(){
-        //changes the facing right boolean 
-        facingRight = !facingRight;
-
-        //gets the localScale of the gameObject and then flips the sign on the x axis
-        //sets the gameObject's localScale to the new localScale 
-        Vector2 localScale = gameObject.transform.localScale;
-        localScale.x *= -1;
-        transform.localScale = localScale;
-
-    }
 
     //Jumping function
     void Jump(){
